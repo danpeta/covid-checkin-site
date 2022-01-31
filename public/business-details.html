@@ -1,0 +1,75 @@
+<!-- Sig -->
+
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+        <title>Edit Business</title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../stylesheets/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="../../javascripts/main.js"></script>
+    </head>
+
+    <body onload="loadBusinessDetails()">
+        <header>
+            <button id="home" onclick="window.location.href ='/home'">Home</button>
+            <button id ="logout" onclick="window.location.href ='/logout'">Log Out</button>
+        </header>
+
+        <div class="generaldivclass" id="editBusiness_div_main">
+            <h1> Edit Business Information</h1>
+            <form id="EditBussines-form" class="form_main" onsubmit = "saveChanges()">
+                <label class="geneLabelClass" for="editBusiness_name">Business name:</label>
+                <input class="med-input" type="text" id="editBusiness_name" name="b_name" value=""><br><br>
+                <label class="geneLabelClass"for="b_type">Industry:</label>
+                <select class="addbiz-sel-class" name="b_type" id="b_type">
+                  <option value="Manufacturing">Manufacturing</option>
+                  <option value="Agriculture">Agriculture</option>
+                  <option value="Services">Services</option>
+                  <option value="Diversified">Diversified</option>
+                  <option value="Other">Other</option>
+                </select><br><br>
+                <label class="geneLabelClass" for="editBusiness_email">Email:</label>
+                <input class="med-input" type="text" id="editBusiness_email" name="b_email" value=""><br><br>
+                <label Class="geneLabelClass" for="editBusiness_phone">Business Phone Number:</label>
+                <input class="med-input" type="text" id="editBusiness_phone" name="b_number" value=""><br><br>
+                <label class="geneLabelClass" for="capacity">Capacity:</label>
+                <input class="med-input" type="number" min="1" id="capacity" name="b_capacity" oninput="this.value = !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null" value=""><br><br>
+                <hr id="hr"> <br>
+                <label class="geneLabelClass" for="editBusiness_address_no">Street Number:</label>
+                <input class="med-input" type="text" id="editBusiness_address_no" name="b_address_no" value=""><br><br>
+                <label class="geneLabelClass" for="editBusiness_address_street">Street Name:</label>
+                <input class="med-input" type="text" id="editBusiness_address_street" name="b_address_name" value=""><br><br>
+                <label class="geneLabelClass" for="editBusiness_address_suburb">Suburb:</label>
+                <input class="med-input" type="text" id="editBusiness_address_suburb" name="b_address_suburb" value=""><br><br>
+                <label class="geneLabelClass" for=same"editBusiness_address_state">State:</label>
+                <input class="med-input" type="text" id="editBusiness_address_state" name="b_address_state" value=""><br><br>
+                <label class="geneLabelClass" for="editBusiness_address_postcode">Postcode:</label>
+                <input class="med-input" type="text" id="editBusiness_address_postcode" name="b_address_postcode" value=""><br><br>
+                <!--<input class="userAccount_button" type="submit" name="saveChanges-submit" value="Save Changes">-->
+                </form><br>
+            <p id="saveChange"></p>
+            <p id="error"></p>
+            <button onclick="updateBusiness()">Save Changes</button><br><br>
+            <button onclick= "window.location.href ='/home/manage-business'">Cancel</button>
+            </div>
+    </body>
+    <footer>
+          <ul>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/">Coronavirus-infomation-site</a></li>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/health-advice/call-centres-and-information-lines">Contact</a></li>
+            <li class="footer-list"> <a href=https://www.covid-19.sa.gov.au/privacy>Privacy</a></li>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/disclaimer">Disclaimer</a></li>
+            <li class="footer-list"> <a href="https://www.sa.gov.au/copyright">Copyright</a></li>
+          </ul><br>
+            <a href="https://www.sa.gov.au">
+              <img width="125" height="17" src="https://www.covid-19.sa.gov.au/__data/assets/git_bridge/0005/39641//dist/mysource_files/sagovau-placeholder.png" alt="SA.GOV.AU logo">
+            </a><br><br>
+            <a href="https://southaustralia.com/">
+               <img src="https://www.covid-19.sa.gov.au/__data/assets/git_bridge/0005/39641//dist/mysource_files/sa-logo.svg" alt="South Australia logo">
+            </a>
+        </footer>
+</html>

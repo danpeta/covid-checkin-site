@@ -1,0 +1,122 @@
+<!--ARIFF-->
+
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+
+        <title>User Check-in History</title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="../javascripts/main.js"></script>
+
+        <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
+        <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
+
+        <script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
+        <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+
+    </head>
+
+    <body onload="userHistory()">
+        <header>
+            <button id="home" onclick="window.location.href ='/home'">Home</button>
+            <button id ="logout" onclick="window.location.href ='/logout'">Log Out</button>
+        </header>
+        <div class="mapdivclass">
+        <h1>User History</h1>
+
+            </div>
+            <div class="different" id='map'></div>
+
+            <script>
+
+            var usercheckins;
+
+            function mapBox(address, date, el) {
+                mapboxClient.geocoding
+                .forwardGeocode({query: address,autocomplete: true,limit: 1})
+                .send()
+                .then(function (response) {
+                        if (
+                        response &&
+                        response.body &&
+                        response.body.features &&
+                        response.body.features.length
+                    ) {
+                        var feature = response.body.features[0];
+
+                        var i;
+
+                            new mapboxgl.Marker(el)
+                            .setLngLat(feature.center)
+                            .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                            .setHTML('<h3>' + address + '</h3><p>' + date + '</p>'))
+                            .addTo(map);
+                    }
+                });
+            }
+
+            function userHistory(){
+                var xhttp = new XMLHttpRequest();
+                 xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        usercheckins=JSON.parse(xhttp.responseText);
+                        var i;
+                        for(i=0; i<usercheckins.length; i++) {
+
+                            date = new Date(usercheckins[i].date);
+                            var point = document.createElement('div');
+                            if (usercheckins[i].hotspot==false){
+                                point.className = 'markerU';
+                                mapBox(usercheckins[i].business_name+"<br> <h4>Address :" + usercheckins[i].address +"</h4>", "Checked in at: " + date.getHours() +":" + date.getMinutes() + " | " + date.getDate() + "/" + (date.getMonth()+1) + '/'+ date.getFullYear(), point);
+                            }
+                            else{
+                                point.className = 'markerU-H';
+                                mapBox(usercheckins[i].business_name+"<br> <h4>Address :" + usercheckins[i].address +"</h4>", "<b style='color:red;'>HOTSPOT!<br>Checked in at: " + date.getHours() +":" + date.getMinutes() + " | " + date.getDate() + "/" + (date.getMonth()+1) + '/'+ date.getFullYear() + '</b>', point);
+                            }
+
+
+                        }
+                    }
+                };
+
+                xhttp.open("GET", "/home/check-in-history/data", true);
+                xhttp.setRequestHeader("Content-Type", "application/json");
+                xhttp.send();
+            }
+
+            mapboxgl.accessToken = 'pk.eyJ1Ijoibm90ZnJlZXppbmciLCJhIjoiY2tvbnM1YXltMDNwbTJ1cnhxeTZndnlwaCJ9.-W85SLEHsFG1jBsCr0jemA';
+            var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+
+            var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/streets-v11', center: [138.6007, -34.9285], zoom: 12});
+            // var locations = ["156 pultney st adelaide", "rundle mall", "burnside village adelaide"];
+
+            </script>
+            <!--</div>-->
+            <div class="mapdivclass">
+            <button class = "center healthOffical_button" onclick= "window.location.href ='/home'">Back</button>
+            </div>
+
+    </body>
+    <footer>
+          <ul>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/">Coronavirus-infomation-site</a></li>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/health-advice/call-centres-and-information-lines">Contact</a></li>
+            <li class="footer-list"> <a href=https://www.covid-19.sa.gov.au/privacy>Privacy</a></li>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/disclaimer">Disclaimer</a></li>
+            <li class="footer-list"> <a href="https://www.sa.gov.au/copyright">Copyright</a></li>
+          </ul><br>
+            <a href="https://www.sa.gov.au">
+              <img width="125" height="17" src="https://www.covid-19.sa.gov.au/__data/assets/git_bridge/0005/39641//dist/mysource_files/sagovau-placeholder.png" alt="SA.GOV.AU logo">
+            </a><br><br>
+            <a href="https://southaustralia.com/">
+               <img src="https://www.covid-19.sa.gov.au/__data/assets/git_bridge/0005/39641//dist/mysource_files/sa-logo.svg" alt="South Australia logo">
+            </a>
+        </footer>
+</html>

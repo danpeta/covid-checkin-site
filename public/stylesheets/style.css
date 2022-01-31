@@ -1,0 +1,619 @@
+/*For your infomation - color palette*/
+/*Blue          Hex: #003087  */
+/*Light Blue    Hex: #009cde  */
+/*Dark Blue     Hex: #012169  */
+
+header {
+    height: 5em;
+    position: relative;
+    width: 100%;
+    height: 60px;
+}
+
+body {
+    margin: 0px;
+    background-color: #B3B3B3;
+    /*background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);*/
+    /*background-image: linear-gradient(to left, #868f96 0%, #596164 100%);*/
+}
+
+footer {
+    position:relative;
+    bottom:0;
+    width:100%;
+    min-height:10em;
+    background-color: #012169;
+    color:white;
+    margin-top:10em;
+    text-align:center;
+}
+
+.footer_absolute{
+    position:absolute;
+}
+
+#health_official_btn{
+    visibility: hidden;
+}
+
+#business_info_btn{
+    visibility: hidden;
+}
+
+/*#addbiz-sel{
+    font-family:'Roboto', Arial;
+    font-size:1em;
+    min-height:2vw;
+    min-width:15vw;
+    padding:0 0.75vw;
+}*/
+
+.addbiz-sel-class{
+    font-family:'Roboto', Arial;
+    font-size:1em;
+    min-height:2.2vw;
+    min-width:16.7vw;
+    padding:0 0.75vw;
+}
+
+#geneLabelId{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 330px;
+    text-align: right;
+    font-size:1.25em;
+}
+
+
+.geneLabelClass{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 330px;
+    text-align: right;
+    font-size:1.25em;
+}
+
+#footerR{
+    position:relative;
+    bottom:0;
+    width:100%;
+    height:11em;
+    background-color: #012169;
+    color:white;
+    margin-top:10em;
+    text-align:center;
+}
+
+#footerAbs{
+    position:relative;
+    bottom:0;
+    width:100%;
+    height:11em;
+    background-color: #012169;
+    color:white;
+    margin-top:10em;
+    text-align:center;
+}
+
+.footer-list{
+    display:inline-table;
+    margin-top:10px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+input{
+    font-size:1em;
+}
+
+a {
+    text-decoration: none;
+    font-family:'Roboto', sans-serif;
+    color:white;
+}
+
+/* footer {
+    height: 5em;
+    background-color:  #B3B3B3;
+    bottom: 0;
+} */
+
+.different:not(div){
+    background-color: transparent;
+}
+
+/*div {*/
+/*  text-align: center;*/
+/*  border-radius: 5px;*/
+/*  padding: 20px;*/
+/*  float:none;*/
+/*  width: 500px;*/
+/*  margin: auto;*/
+/*}*/
+
+/* adding this class fixed the map api thing, so just dont add this class to pages with maps*/
+.generaldivclass {
+    background-color: #C2C2C2;
+    text-align: center;
+    border-radius: 30px;
+    padding: 20px;
+    float:none;
+    min-width: 14em;
+    max-width: 50em;
+    margin: auto;
+    box-shadow: 0 0 20px 5px grey;
+}
+
+.mapdivclass {
+    background-color: #C2C2C2;
+    text-align: center;
+    border-radius: 30px;
+    padding: 20px;
+    float:none;
+    min-width: 14em;
+    max-width: 50em;
+    margin: auto;
+}
+
+h1 {
+    text-align:center;
+    padding: 0.4em;
+    color: #003087; /*A light blue*/
+    font-family: 'Roboto', sans-serif;
+    min-font-size:3em;
+}
+
+h2 {
+    text-align:center;
+    padding: 0.4em;
+    color: #003087; /*A light blue*/
+    font-family: 'Roboto', sans-serif;
+}
+
+.h3-class{
+    text-align:center;
+    padding: 0.4em;
+    color: #003087; /*A light blue*/
+    font-family: 'Roboto', sans-serif;
+}
+
+form {
+    text-align: center;
+    color: #004E87;
+    font-family: 'Roboto', Arial;
+    padding: 0vw;
+    margin: 0vw;
+}
+
+img {
+    min-width:1em;
+}
+
+button:hover {
+  background-color: #004E87;
+}
+
+button {
+  background-color: #0469B3;
+  border-radius: 3px;
+  border:none;
+  font-family: 'Roboto', Arial;
+  padding:10px 5px;
+  min-width: 140px;
+
+  /*height: 33px;*/
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  font-size:1em;
+}
+
+table{
+    color:#004E87;
+}
+
+select {
+    text-align:center;
+}
+
+/*.errorListItem {*/
+/*    width: 20vw;*/
+/*}*/
+
+.errorList {
+    /*width: 0vw;*/
+    display: table;
+    margin: 0 auto;
+    text-align:left;
+}
+
+.lrg-field {
+    min-height:2.5vw;
+    min-width:18.5vw;
+    padding:0 0.75vw;
+}
+
+.med-input {
+    min-height:2vw;
+    min-width:15vw;
+    padding:0 0.75vw;
+}
+
+.sml-field {
+    height:2.5em;
+    width:5em;
+}
+
+.loginbuttons {
+    min-height: 2.5vw;
+    min-width: 20vw;
+    cursor: pointer;
+}
+
+.loginlogin:hover{
+    background-color:darkgrey;
+}
+
+.loginlogin {
+    border-radius: 3px;
+    border:none;
+    font-family: 'Roboto', Arial;
+    padding:10px 5px;
+    min-width: 140px;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+    font-size:1em;
+    height:2em;
+    min-height: 2.5vw;
+    width:20vw;
+    min-width:10em;
+}
+
+.margin{
+    margin:5px;
+}
+
+.content {
+    padding: 10vw 0vw;
+    width: 40vw;
+}
+
+.footer-ptag {
+    text-align:center;
+    padding: 0.4em;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-ptagb {
+    text-align:center;
+    padding: 0.4em;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+#home {
+    float:left;
+    margin: 25px;
+    background-color: #003087;
+}
+
+#logout {
+    float:right;
+    margin: 25px;
+    background-color: #003087;
+}
+
+#login {
+    float:right;
+    margin: 25px;
+    background-color: #004E87;
+}
+
+#logout:hover {
+  background-color: #009cde;
+}
+
+#home:hover {
+  background-color: #009cde;
+}
+
+#login:hover {
+  background-color: #002366;
+}
+
+#bhistory{
+    background-color: #36c;
+    color: #fff;
+    text-align: left;
+    font-family:'Roboto', Arial;
+    font-size:1.25em;
+    border-collapse: collapse;
+    border: 1px solid darkgrey;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#bhistory th {
+    border: 1px solid darkgrey;
+    padding: 5px;
+}
+
+#bhistory td {
+    border: 1px solid darkgrey;
+    padding: 5px;
+}
+
+#userAccount_h1_name{
+  font-family: 'Roboto', Arial;
+  color: #003087;
+}
+
+#userAccount_line{
+  width:400px;
+}
+
+#lookUpResults_h1_name{
+  font-family: 'Roboto', Arial;
+  color: #012169;
+}
+
+
+#TableV {
+    background-color: #36c;
+    color: #fff;
+    text-align: left;
+    font-family:'Roboto', Arial;
+    font-size:1.25em;
+    border-collapse: collapse;
+    border: 1px solid darkgrey;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0 auto;
+    display:none;
+
+}
+
+#TableV th {
+    border: 1px solid darkgrey;
+    padding: 5px;
+}
+
+#TableV td {
+    border: 1px solid darkgrey;
+    padding: 5px;
+}
+
+#CodeV{
+    display:none;
+}
+
+#map{
+
+    width:60vw;
+    height:60vh;
+    background-color: transparent;
+
+    text-align: center;
+    border-radius: 5px;
+    padding: 20px;
+    float:none;
+    margin: auto;
+}
+
+#hidden{
+    display:none;
+}
+
+/* For addbusiness */
+fieldset {
+    /*these top 3 lines all do the same thing:*/
+    /*display: inline-block;*/
+    /*width:0px; */
+    max-width: max-content;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#homeButton{
+    width: 200px;
+    height: 50px;
+}
+
+#homeInput{
+    min-height:2vw;
+    min-width:15vw;
+    padding:0 0.75vw;
+    font-size:1em;
+    background-color: #ECECEC;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.searchInput{
+    min-height:2vw;
+    min-width:15vw;
+    padding:0 0.75vw;
+    font-size:1em;
+    background-color: #ECECEC;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button:hover {
+  background-color: #004E87;
+}
+
+.button {
+  background-color: #0469B3;
+  border-radius: 3px;
+  border:none;
+  font-family: 'Roboto', Arial;
+  padding:10px 5px;
+  width: 140px;
+  height: 40px;
+  cursor: pointer;
+  text-align: center;
+  color:white;
+}
+
+/* For businesshistory */
+.history {
+    text-align: center;
+}
+
+/* popup text is imported, going to edit
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.userAccount_button:hover{
+  background-color: #004E87;
+}
+
+.userAccount_button{
+  background-color: #0469B3;
+  border-radius: 3px;
+  border:none;
+  font-family: 'Roboto', Arial;
+  padding:10px 5px;
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  text-align: center;
+  color:white;
+}
+
+.form_main{
+  color: #004E87;
+}
+
+input[type=text],[type=password], [type=number], select {
+  background-color: #ECECEC;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.manageBusiness_b:hover{
+    background-color:grey;
+}
+
+/*for manage business*/
+.manageBusiness_b{
+  background-color: #004E87;
+  border-radius: 3px;
+  border:none;
+  font-family: 'Roboto', Arial;
+  padding:10px 5px;
+  width: 240px;
+  height: 50px;
+  cursor: pointer;
+  text-align: center;
+  color:white;
+}
+
+.errorText {
+    font-family:'Roboto', arial;
+}
+
+.center{
+    text-align:center;
+    /*color:*/
+}
+
+.markerH {
+
+  background-image: url('../img/hotspot-icon.png');
+  opacity:0.5;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+
+.markerU {
+  opacity:0.5;
+  background-image: url('../img/icons8-street-view-9.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+
+.markerU-H {
+  opacity:0.5;
+  background-image: url('../img/icons8-high-importance-96.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*
+.center {
+
+    margin: auto;
+    width: 50%;
+
+}*/
+
+/*#signupbutton {*/
+
+/*    height:2.6em;*/
+/*    width:20.5em;*/
+/*    font-size:1em;*/
+
+/*}*/
+
+/*.lrg-btn {*/
+/*    height:2em;*/
+/*    width:4.5em;*/
+/*    font-size: 1em;*/
+/*}*/
+
+/*.sml-btn {*/
+/*    height:2.5em;*/
+/*    width:5em;*/
+/*}*/

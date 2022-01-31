@@ -1,0 +1,54 @@
+<!-- Sig -->
+
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+        <title>User Account</title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="javascripts/main.js"></script>
+    </head>
+
+    <!--I ADDED ON LOAD TO DYNAMICALLY SHOW NAME-->
+    <body onload="loadUserAccount()">
+    	<header>
+            <button id ="logout" onclick="window.location.href ='/logout'">Log Out</button>
+        </header>
+
+        <div class="generaldivclass center" id="userAccount_button_div">
+          <h1 id="userAccount_h1_name">&nbsp</h1>
+            <form id = "checkIn-form" class = "center">
+              <p id="error">&nbsp</p>
+              <input id="homeInput" type="text" name="code" placeholder = "Enter Check-in Code"><br><br>
+              <button id="homeButton" type = "button" onclick="checkIn()">&#10145 Check In</button><br><br>
+            </form><br>
+            <!--<button class="userAccount_button" onclick="">Check In!</button><br>-->
+            <hr id="userAccount_line">
+            <br><br>
+            <button class="userAccount_button" onclick="window.location.href = '/home/current-hotspots'">Current Hotspots</button>
+            <button class="userAccount_button" onclick="window.location.href = '/home/check-in-history'">Check in History</button><br><br>
+            <button class="userAccount_button" onclick="window.location.href ='/home/account-details'">Personal Infomation</button>
+            <button class="userAccount_button" onclick="window.location.href ='/home/add-business'">Add Business</button><br><br>
+            <button id="health_official_btn" class="userAccount_button" onclick="window.location.href ='/home/health-official'">Health Official</button>
+            <button id="business_info_btn" class="userAccount_button" onclick="window.location.href ='/home/manage-business'">Business Infomation</button><br><br>
+        </div>
+        <footer id="footerR">
+              <ul>
+                <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/">Coronavirus-infomation-site</a></li>
+                <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/health-advice/call-centres-and-information-lines">Contact</a></li>
+                <li class="footer-list"> <a href=https://www.covid-19.sa.gov.au/privacy>Privacy</a></li>
+                <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/disclaimer">Disclaimer</a></li>
+                <li class="footer-list"> <a href="https://www.sa.gov.au/copyright">Copyright</a></li>
+              </ul><br>
+                <a href="https://www.sa.gov.au">
+                  <img width="125" height="17" src="https://www.covid-19.sa.gov.au/__data/assets/git_bridge/0005/39641//dist/mysource_files/sagovau-placeholder.png" alt="SA.GOV.AU logo">
+                </a><br><br>
+                <a href="https://southaustralia.com/">
+                   <img src="https://www.covid-19.sa.gov.au/__data/assets/git_bridge/0005/39641//dist/mysource_files/sa-logo.svg" alt="South Australia logo">
+                </a>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+        <title>Lookup</title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../stylesheets/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="../../javascripts/main.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <button id="home" onclick="window.location.href ='/home'">Home</button>
+            <button id ="logout" onclick="window.location.href ='/logout'">Log Out</button>
+        </header>
+
+
+
+        <div class="generaldivclass center content">
+            <h1 > User & Business Lookup </h1>
+
+
+            <!--<button onclick="toggleSearch();">Toggle User/Business</button>-->
+            <form action="../health-official/search/results"><br>
+                <label id="labelLookup" for="id_input">Enter a User's Email:</label>
+                <input class="searchInput" type="text" id="user_id" name="id_input" placeholder="User's Email"><br><br>
+                <!--<input class="button" type="submit" value="Search">-->
+            </form>
+            <p id="error">&nbsp</p>
+            <button class="userAccount_button" type = "button" onclick="setHealthUserSession(); window.location.href ='/home/account-details';">Change Details</button>
+            <button class="userAccount_button" type = "button" onclick="setHealthUserSession(); window.location.href ='/home/check-in-history';">Check-in History</button><br>
+            <br>
+            <h3 class=h3-class>───────────────── or ─────────────────</h3>
+            <form action="../health-official/search/results"><br>
+                <label class="labelLookup" for="id_input">Enter a Business ID:</label>
+                <input class="searchInput" type="text" id="business_id" name="id_input" placeholder="Business ID"><br><br>
+                <!--<input class="button" type="submit" value="Search">-->
+            </form>
+            <p id="errorb">&nbsp</p>
+            <button class="userAccount_button" type = "button" onclick="setHealthBusinessSession(); window.location.href ='/home/manage-business/business-details';">Change Details</button>
+            <button class="userAccount_button" type = "button" onclick="setHealthBusinessSession(); window.location.href ='/home/manage-business/check-in-history';">Check-in History</button><br><br><br><br>
+            <button class = "center healthOffical_button" onclick= "window.location.href ='/home/health-official'">Back</button>
+        </div>
+    </body>
+
+    <footer>
+          <ul>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/">Coronavirus-infomation-site</a></li>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/health-advice/call-centres-and-information-lines">Contact</a></li>
+            <li class="footer-list"> <a href=https://www.covid-19.sa.gov.au/privacy>Privacy</a></li>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/disclaimer">Disclaimer</a></li>
+            <li class="footer-list"> <a href="https://www.sa.gov.au/copyright">Copyright</a></li>
+          </ul><br>
+            <a href="https://www.sa.gov.au">
+              <img width="125" height="17" src="https://www.covid-19.sa.gov.au/__data/assets/git_bridge/0005/39641//dist/mysource_files/sagovau-placeholder.png" alt="SA.GOV.AU logo">
+            </a><br><br>
+            <a href="https://southaustralia.com/">
+               <img src="https://www.covid-19.sa.gov.au/__data/assets/git_bridge/0005/39641//dist/mysource_files/sa-logo.svg" alt="South Australia logo">
+            </a><br><br><br><br>
+    </footer>
+</html>

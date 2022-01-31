@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <!-- Page by Bowen Hawkey a1772794 -->
+        <title>Add Business</title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="../javascripts/main.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <button id="home" onclick="window.location.href ='/home'">Home</button>
+            <button id ="logout" onclick="window.location.href ='/logout'">Log Out</button>
+        </header><br><br><br><br>
+        <div class="generaldivclass">
+            <form class="form_main"><br><br>
+                <!--
+                 Business name:
+                 Business Type / Activity: (Drop-down)
+                 Business Address: (Multi-line)
+                     Address Number:
+                     Street:
+                     Suburb:
+                     Postcode: (number)
+                     City:
+                     State:
+                Business Phone Number:
+                Persons Capacity: (number)
+                Code (From Health Official):
+                -->
+                <h1>Add Business</h1>
+                <label class="geneLabelClass" for="bname">Business name:</label>
+                <input class="med-input addBizInputId" type="text" id="bname" name="bname"><br><br>
+
+                <label class="geneLabelClass" for="btype">Industry:</label>
+                <select class="addbiz-sel-class"name="btype" id="btype">
+                  <option value="Default">-</option></option>
+                  <option value="Manufacturing">Manufacturing</option>
+                  <option value="Agriculture">Agriculture</option>
+                  <option value="Services">Services</option>
+                  <option value="Diversified">Diversified</option>
+                  <option value="Other">Other</option>
+                </select><br><br>
+                <label class="geneLabelClass" for="addBusiness_email">Email:</label>
+                <input class="med-input" type="text" id="addBusiness_email" name="b_email"><br><br>
+                <label class="geneLabelClass" for="addBusiness_phone">Business Phone Number:</label>
+                <input class="med-input" type="text" id="addBusiness_phone" name="b_number"><br><br>
+                <hr><br>
+                <label class="geneLabelClass" for="addBusiness_address_no">Street Number:</label>
+                <input class="med-input" type="text" id="addBusiness_address_no" name="b_address_no" ><br><br>
+                <label class="geneLabelClass" for="addBusiness_address_name">Street Name:</label>
+                <input class="med-input" type="text" id="addBusiness_address_name" name="b_address_name" ><br><br>
+                <label class="geneLabelClass" for="addBusiness_address_suburb">Suburb:</label>
+                <input class="med-input" type="text" id="addBusiness_address_suburb" name="b_address_suburb" ><br><br>
+                <label class="geneLabelClass" for="addBusiness_address_state">State:</label>
+                <input class="med-input" type="text" id="addBusiness_address_state" name="b_address_state" ><br><br>
+                <label class="geneLabelClass" for="addBusiness_address_postcode">Postcode:</label>
+                <input class="med-input" type="text" id="addBusiness_address_postcode" name="b_address_postcode" ><br><br>
+                <label class="geneLabelClass" for="capacity">Capacity:</label>
+                <input class="med-input" type="number" id="capacity" min="1" oninput="this.value = !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null" name="capacity"><br><br>
+                <hr><br>
+                <label class="geneLabelClass" for="code">Business Code:</label>
+                <input class="med-input" type="text" id="code" name="code"><br><br>
+                <p id="error"></p>
+                <button type = "button" onclick="addBusiness()">Add Business</button><br><br>
+                <button type = "button" class = "center healthOffical_button" onclick= "window.location.href ='/home'">Cancel</button><br><br><br><br>
+            </form>
+            <br>
+            <!--<button id = "cancel" onclick="document.location='login.html'">Cancel</button>-->
+        </div><br><br><br><br>
+        <footer>
+          <ul>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/">Coronavirus-infomation-site</a></li>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/health-advice/call-centres-and-information-lines">Contact</a></li>
+            <li class="footer-list"> <a href=https://www.covid-19.sa.gov.au/privacy>Privacy</a></li>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/disclaimer">Disclaimer</a></li>
+            <li class="footer-list"> <a href="https://www.sa.gov.au/copyright">Copyright</a></li>
+          </ul><br>
+            <a href="https://www.sa.gov.au">
+              <img width="125" height="17" src="https://www.covid-19.sa.gov.au/__data/assets/git_bridge/0005/39641//dist/mysource_files/sagovau-placeholder.png" alt="SA.GOV.AU logo">
+            </a><br><br>
+            <a href="https://southaustralia.com/">
+               <img src="https://www.covid-19.sa.gov.au/__data/assets/git_bridge/0005/39641//dist/mysource_files/sa-logo.svg" alt="South Australia logo">
+            </a>
+        </footer>
+    </body>
+</html>

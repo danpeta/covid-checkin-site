@@ -1,0 +1,142 @@
+<!--ARIFF-->
+
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+
+        <title>Current Hotspots</title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="../javascripts/main.js"></script>
+
+        <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
+        <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
+
+        <script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
+        <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+
+    </head>
+
+    <body onload="hotspotHistory()" id='app'>
+        <header>
+            <button id="home" onclick="window.location.href ='/home'">Home</button>
+            <button id ="logout" onclick="window.location.href ='/logout'">Log Out</button>
+        </header>
+        <div class="mapdivclass">
+        <h1>Current Hotspots</h1>
+
+
+
+
+            </div>
+            <!--map div-->
+            <!--<div id="MapV">-->
+            <div class="different" id='map'></div>
+            <script>
+
+            var hotspots;
+
+            function mapBox(name, address){
+              mapboxClient.geocoding
+              .forwardGeocode({query: address,autocomplete: true,limit: 1})
+              .send()
+              .then(function (response) {
+                      if (
+                      response &&
+                      response.body &&
+                      response.body.features &&
+                      response.body.features.length
+                  ) {
+                      var feature = response.body.features[0];
+
+                      var i;
+
+                          var el = document.createElement('div');
+                          el.className = 'markerH';
+                          new mapboxgl.Marker(el)
+                          .setLngLat(feature.center)
+                          .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                          .setHTML('<h3>' + name + '</h3><p>' + address + '</p>'))
+                          .addTo(map);
+                  }
+              });
+            }
+
+            function hotspotHistory(){
+              var xhttp = new XMLHttpRequest();
+
+              xhttp.onreadystatechange = function() {
+                if(this.readyState == 4 && this.status == 200) {
+                  console.log("worksing");
+                  hotspots=JSON.parse(xhttp.responseText);
+                  var i;
+                  for (i in hotspots){
+                    mapBox(hotspots[i].name +"<br><br><b style='color:red;'>ACTIVE HOTSPOT!", hotspots[i].address);
+                  }
+                }
+              };
+
+              xhttp.open("GET", "/home/current-hotspots/data", true);
+              xhttp.setRequestHeader("Content-Type", "application/json");
+              xhttp.send();
+
+            }
+
+
+
+
+            mapboxgl.accessToken = 'pk.eyJ1Ijoibm90ZnJlZXppbmciLCJhIjoiY2tvbnM1YXltMDNwbTJ1cnhxeTZndnlwaCJ9.-W85SLEHsFG1jBsCr0jemA';
+            var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+            var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [138.61543,-34.92195],
+            zoom: 13,
+            });
+
+
+
+            // add markers to map
+            // geojson.features.forEach(function(marker) {
+
+              // create a HTML element for each feature
+              // var el = document.createElement('div');
+              // el.className = 'markerH';
+
+              // // make a marker for each feature and add to the map
+              // new mapboxgl.Marker(el)
+              //   .setLngLat(marker.geometry.coordinates)
+              //   .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+              //   .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+              //   .addTo(map);
+
+
+
+            </script>
+
+            <div class="mapdivclass">
+            <button class = "center healthOffical_button" onclick= "window.location.href ='/home'">Back</button>
+            </div>
+    </body>
+        <footer>
+          <ul>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/">Coronavirus-infomation-site</a></li>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/health-advice/call-centres-and-information-lines">Contact</a></li>
+            <li class="footer-list"> <a href=https://www.covid-19.sa.gov.au/privacy>Privacy</a></li>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/disclaimer">Disclaimer</a></li>
+            <li class="footer-list"> <a href="https://www.sa.gov.au/copyright">Copyright</a></li>
+          </ul><br>
+            <a href="https://www.sa.gov.au">
+              <img width="125" height="17" src="https://www.covid-19.sa.gov.au/__data/assets/git_bridge/0005/39641//dist/mysource_files/sagovau-placeholder.png" alt="SA.GOV.AU logo">
+            </a><br><br>
+            <a href="https://southaustralia.com/">
+               <img src="https://www.covid-19.sa.gov.au/__data/assets/git_bridge/0005/39641//dist/mysource_files/sa-logo.svg" alt="South Australia logo">
+            </a>
+        </footer>
+</html>

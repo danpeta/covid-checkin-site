@@ -1,0 +1,60 @@
+<!--DANIEL-->
+
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+        <title>Sign Up</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="javascripts/main.js" defer></script>
+
+    </head>
+
+    <body>
+        <header>
+            <!---<button id ="logout" onclick="window.location.href ='/logout'">LOG OUT</button>--->
+        </header><br><br><br><br>
+        <div id = "app" class="generaldivclass center content">
+            <h1 class = "center">Sign Up</h1>
+            <form name = "sign" @submit = "checkSignUp">
+                  <div v-if="errors.length" class="center">
+                    <p><b>Please correct the following error(s):</b></p>
+                    <ul id="errorList" class = "center errorList">
+                      <li v-for="error in errors" class = "errorListItem center">{{ error }}</li>
+                    </ul>
+                    <br>
+                  </div>
+                  <input class="med-input" type="text" v-model="given_name" id="given_name" name="given_name" placeholder="First Name"><br><br>
+                  <input class="med-input" type="text" v-model="last_name" id="last_name" name="last_name" placeholder="Last Name"><br><br>
+                  <input class="med-input" type="text" v-model="email" id="email" name="email" placeholder="Email Address"><br><br>
+                  <input class="med-input" type="text" v-model="mobile_number" id="mobile_number" name="mobile_number" placeholder="Mobile Number"><br><br>
+                  <input class="med-input" type="password" v-model="password" id="password" name="password" placeholder="Password"><br><br>
+                  <input class="med-input" type="password" v-model="confpassword" id="confpassword" name="confpassword" placeholder="Confirm Password"><br><br>
+                  <input class="button" type="submit" value="Sign Up"><br>
+            </form>
+            <br>
+            <button class = "center healthOffical_button" onclick= "window.location.href ='/login'">Back</button>
+
+        </div>
+    <footer>
+          <ul>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/">Coronavirus-infomation-site</a></li>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/health-advice/call-centres-and-information-lines">Contact</a></li>
+            <li class="footer-list"> <a href=https://www.covid-19.sa.gov.au/privacy>Privacy</a></li>
+            <li class="footer-list"> <a href="https://www.covid-19.sa.gov.au/disclaimer">Disclaimer</a></li>
+            <li class="footer-list"> <a href="https://www.sa.gov.au/copyright">Copyright</a></li>
+          </ul><br>
+            <a href="https://www.sa.gov.au">
+              <img width="125" height="17" src="https://www.covid-19.sa.gov.au/__data/assets/git_bridge/0005/39641//dist/mysource_files/sagovau-placeholder.png" alt="SA.GOV.AU logo">
+            </a><br><br>
+            <a href="https://southaustralia.com/">
+               <img src="https://www.covid-19.sa.gov.au/__data/assets/git_bridge/0005/39641//dist/mysource_files/sa-logo.svg" alt="South Australia logo">
+            </a>
+    </footer>
+    </body>
+</html>
